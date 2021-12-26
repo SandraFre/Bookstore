@@ -37,8 +37,8 @@ public class BookService {
     }
 
     public List<Book> findBooks(String query) {
-        query = "%" + query + "%";
-        return bookRepository.findByTitleLikeOrAuthorLike(query, query);
+        query = "%" + query.toLowerCase() + "%";
+        return bookRepository.findByTitleLikeIgnoreCaseOrAuthorLikeIgnoreCaseOrCategoryLikeIgnoreCase(query, query, query);
     }
 
 
