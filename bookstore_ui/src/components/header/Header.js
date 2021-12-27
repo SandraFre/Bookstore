@@ -25,7 +25,7 @@ const Header = () => {
         <>
             <AppBar position="static"
                     color="default"
-                    sx={{borderBottom: (theme) => `1px solid ${theme.palette.divider}`}}>
+                    sx={{borderBottom: (theme) => `1px solid ${theme.palette.divider}`, backgroundColor:'#e6ebe1'}}>
                 <Toolbar sx={{flexWrap: 'wrap'}}>
                     <Typography variant="h6"
                                 color="inherit"
@@ -54,14 +54,16 @@ const Header = () => {
                             color="text.primary"
                             underline="none"
                             component={NavLink}
-                            to="/users/registration" sx={{my: 1, mx: 1.5}}
+                            to="/users/registration"
+                            sx={{my: 1, mx: 1.5}}
                         >
                             Create new user
                         </Link>
                         <Link
                             variant="button"
                             color="text.primary"
-                            to="/cart" sx={{my: 1, mx: 1.5}}
+                            to="/cart"
+                            sx={{my: 1, mx: 1.5}}
                             component={NavLink}
                         >
                             {/*<Badge badgeContent={totalItems} color="primary">*/}
