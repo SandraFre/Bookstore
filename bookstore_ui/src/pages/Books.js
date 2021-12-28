@@ -14,7 +14,9 @@ import {
 import {useEffect, useState} from "react";
 import {getBooks} from "../api/bookApi";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import {NavLink} from "react-router-dom";
 // import {useDispatch} from "react-redux";
+
 
 const Books = () => {
 
@@ -30,6 +32,7 @@ const Books = () => {
             .catch((error) => console.log(error))
             .finally(() => setLoading(false));
     }, []);
+
 
     return (
         <Container maxWidth="md" sx={{my: 5}}>
@@ -64,11 +67,15 @@ const Books = () => {
                                             </Typography>
                                         </CardContent>
                                         <CardActions sx={{justifyContent: "space-between"}}>
-                                            <Button variant="outlined" color="inherit" size="small">More info</Button>
+                                            <Button variant="outlined"
+                                                    color="inherit"
+                                                    size="small"
+                                                    component={NavLink}
+                                                    to={`/books/${book.id}`}>
+                                                More info</Button>
                                             <Button variant="outlined"
                                                     color="inherit"
                                                     size="small">
-
                                                 <AddShoppingCartIcon/>
                                             </Button>
                                         </CardActions>
