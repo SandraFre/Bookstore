@@ -1,14 +1,17 @@
-import {Box, Button, CircularProgress, Container, Divider, Grid, Paper} from "@mui/material";
-import {useParams} from "react-router-dom";
+import {Alert, Box, Button, CircularProgress, Container, Divider, Grid, Paper} from "@mui/material";
+import {NavLink, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {getBookById} from "../api/bookApi";
+import {deleteBook, getBookById, getBooks, updateBook} from "../api/bookApi";
 import * as React from "react";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import {useNavigate} from "react-router-dom";
 
 export default () => {
     const {bookId} = useParams();
     const [book, setBook] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [notification, setNotification] = useState({isVisible: false, message: '', severity: ''});
+    const navigate = useNavigate();
 
     useEffect(() => {
         getBookById(bookId)
@@ -17,8 +20,25 @@ export default () => {
             .finally(() => setLoading(false));
     }, []);
 
+    const onDeleteBook = (id) => {
+        deleteBook(id)
+            .then(({status}) => {
+                if (status === 204) {
+                    navigate('/');
+                }
+            })
+            .catch((error) => setNotification({isVisible: true, message: 'Something is wrong', severity: 'error'}))
+
+    }
+
     return (
         <>
+            {
+                notification.isVisible &&
+                <Alert severity={notification.severity} sx={{width: '100%'}}>
+                    {notification.message}
+                </Alert>
+            }
             {loading ?
                 <Box sx={{display: 'flex', justifyContent: 'center'}}>
                     <CircularProgress color="inherit"/>
@@ -42,8 +62,12 @@ export default () => {
                               justifyContent="space-between"
                               alignItems="center" sx={{mt: 3, mb: 1}}>
                             <Grid item>
-                                <Button color="inherit">Update</Button>
-                                <Button color="inherit">Delete</Button>
+                                <Button color="inherit"
+                                        component={NavLink}
+                                        to={`/books/update/${book.id}`}>Update</Button>
+                                <Button color="inherit"
+                                        onClick={()=>onDeleteBook(book.id)}
+                                >Delete</Button>
                             </Grid>
                             <Grid item>
                                 <Button variant="outlined"

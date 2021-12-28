@@ -1,4 +1,4 @@
-import {useParams} from "react-router-dom";
+import {NavLink, useParams} from "react-router-dom";
 import {Form, Formik} from "formik";
 import {Alert, Box, Button, CircularProgress, Container, Paper} from "@mui/material";
 import TextFieldInput from "./TextFieldInput";
@@ -68,8 +68,8 @@ export default () => {
                         author: book?.author || '',
                         category: book?.category || '',
                         year: book?.year || '',
-                        quantity: book?.quantity ||  '',
-                        price: book?.price ||  ''
+                        quantity: book?.quantity || '',
+                        price: book?.price || ''
                     }}
                     onSubmit={onUpdateBook}
                     validationSchema={validationSchema}>
@@ -106,6 +106,7 @@ export default () => {
                                             <Button type="submit" variant="outlined" color="inherit"
                                                     sx={{mt: 3}}>Update</Button>
                                     }
+
                                 </Form>
                             </Paper>
                         </Container>
