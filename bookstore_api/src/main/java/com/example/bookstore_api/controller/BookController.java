@@ -6,6 +6,9 @@ import static org.springframework.http.MediaType.*;
 import com.example.bookstore_api.entity.Book;
 import com.example.bookstore_api.service.BookService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +25,12 @@ public class BookController {
         this.bookService = bookService;
     }
 
+    @ApiOperation(value = "Gauti visas knygas", tags = "getProducts", httpMethod = "GET")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Duomenys sekmingai uzkrauti"),
+            @ApiResponse(code = 403, message = "Vartotojas neturi teisiu"),
+            @ApiResponse(code = 404, message = "Nepavyko rasti knygu")
+    })
     @GetMapping(produces = APPLICATION_JSON_VALUE)
     public List<Book> getBooks(){
         return bookService.getBooks();
