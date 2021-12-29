@@ -25,7 +25,7 @@ let prevCart = [];
 const subscribeToStore = (store) =>{
     store.subscribe(()=>{
         const cart = store.getState().cart;
-        if (prevCart != cart){
+        if (prevCart !== cart){
             addLocalStorage('cart', cart);
             prevCart = cart;
         }
