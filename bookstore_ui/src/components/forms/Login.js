@@ -47,7 +47,7 @@ export default () => {
 
             {props => (
                 <Container maxWidth="sm" sx={{my: 5}}>
-                    <Paper elevation={3} sx={{py: 1, backgroundColor: '#e6ebe1'}}>
+                    <Paper elevation={3} sx={{py: 1, backgroundColor: '#F9EFE5'}}>
                         {
                             error &&
                             <Alert severity="error" sx={{width: '100%'}}>

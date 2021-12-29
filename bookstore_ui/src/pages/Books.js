@@ -54,7 +54,7 @@ const Books = () => {
                             <Grid item xs={4}
                                   key={book.id}>
                                 <Paper elevation={3}>
-                                    <Card sx={{backgroundColor: '#e6ebe1'}}>
+                                    <Card sx={{backgroundColor: '#F9EFE5'}}>
                                         <CardContent>
                                             <Typography gutterBottom variant="h5" component="div">
                                                 {book.title}

@@ -51,7 +51,7 @@ export default () => {
     return (
         <AppBar position="static"
                 color="default"
-                sx={{borderBottom: (theme) => `1px solid ${theme.palette.divider}`, backgroundColor: '#e6ebe1'}}>
+                sx={{borderBottom: (theme) => `1px solid ${theme.palette.divider}`, backgroundColor: '#F9EFE5'}}>
             <Toolbar sx={{flexWrap: 'wrap'}}>
                 <Typography variant="h6"
                             color="inherit"

@@ -24,7 +24,7 @@ export default () => {
             {books.length === 0 ?
                 <Alert severity="info">Cart is empty! </Alert>
                 :
-                <TableContainer component={Paper} sx={{backgroundColor: '#e6ebe1'}}>
+                <TableContainer component={Paper} sx={{backgroundColor: '#F9EFE5'}}>
                     <Table sx={{minWidth: 100}} aria-label="simple table">
                         <TableHead>
                             <TableRow>
@@ -53,6 +53,15 @@ export default () => {
                                 </TableRow>
                             ))}
                         </TableBody>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell></TableCell>
+                                <TableCell></TableCell>
+                                <TableCell></TableCell>
+                                <TableCell align="right" sx={{fontWeight:"bold"}}>Total</TableCell>
+                                <TableCell align="right" sx={{fontWeight:"bold"}}>111111</TableCell>
+                            </TableRow>
+                        </TableHead>
                     </Table>
                 </TableContainer>
             }

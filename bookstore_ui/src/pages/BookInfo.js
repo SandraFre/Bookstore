@@ -55,7 +55,7 @@ export default () => {
                 </Box>
                 :
                 <Container maxWidth="md" sx={{my: 5}}>
-                    <Paper elevation={3} sx={{py: 1, px: 5, backgroundColor: '#e6ebe1'}}>
+                    <Paper elevation={3} sx={{py: 1, px: 5, backgroundColor: '#F9EFE5'}}>
                         <h1>{book.title}</h1>
                         <h3>{book.author}</h3>
                         <p><span sx={{ fontStyle: 'italic' }}>Information</span><br/>
