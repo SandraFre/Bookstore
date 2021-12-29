@@ -5,6 +5,10 @@ import Books from "../../pages/Books";
 import Book from "../forms/Book";
 import UpdateBook from "../forms/UpdateBook";
 import BookInfo from "../../pages/BookInfo";
+import SecuredRoute from "../security/SecuredRoute";
+import Cart from "../../pages/Cart";
+import Login from "../forms/Login";
+import RegistrationForm from "../forms/RegistrationForm";
 
 
 export default () => {
@@ -16,10 +20,21 @@ export default () => {
                 <Route path="/" element={<Books/>}/>
                 <Route path="/books/:bookId" element={<BookInfo/>}/>
 
-                {/*<Route path="/products/create" element={<SecuredRoute/>}>*/}
+                <Route path="/products/create" element={<SecuredRoute/>}>
                     <Route path="/books/create" element={<Book/>}/>
-                {/*</Route>*/}
-                <Route path="/books/update/:bookId" element={<UpdateBook/>}/>
+                </Route>
+
+                <Route path="/products/create" element={<SecuredRoute/>}>
+                    <Route path="/books/update/:bookId" element={<UpdateBook/>}/>
+                </Route>
+
+                <Route path="/users/registration" element={<SecuredRoute roles={['ADMIN']}/>}>
+                    <Route path="/users/registration" element={<RegistrationForm/>}/>
+                </Route>
+
+                <Route path="/cart" element={<Cart/>}/>
+
+                <Route path="/login" element={<Login/>}/>
 
             </Routes>
 
