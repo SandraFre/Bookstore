@@ -17,9 +17,12 @@ import {NavLink} from "react-router-dom";
 import {Badge, PersonAdd, Settings} from "@mui/icons-material";
 import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher";
 import SearchBar from "../searchBar/SearchBar";
+import {useSelector} from "react-redux";
 
 
-const Header = () => {
+export default () => {
+    const cart = useSelector(state => state.cart);
+    const totalItems = cart.reduce((sum, book) => sum + book.count, 0);
 
     return (
         <>
@@ -66,9 +69,9 @@ const Header = () => {
                             sx={{my: 1, mx: 1.5}}
                             component={NavLink}
                         >
-                            {/*<Badge badgeContent={totalItems} color="primary">*/}
+                            <Badge badgeContent={totalItems} color="primary">
                             <ShoppingCartIcon/>
-                            {/*</Badge>*/}
+                            </Badge>
                         </Link>
                     </nav>
 
@@ -152,4 +155,3 @@ const Header = () => {
     )
 }
 
-export default Header;
