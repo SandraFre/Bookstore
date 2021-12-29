@@ -9,6 +9,11 @@ public interface ApiPath {
 
     String SEARCH = "/search";
 
+    String FILES = "/files";
+    String FILE_BY_NAME = "/{" + NAME_VARIABLE + "}";
+    String BLOBS = "/blobs";
+    String GET_BLOB = BLOBS + "/{" + ID_VARIABLE + "}";
+
     String LOGIN = "/login";
 
 }
