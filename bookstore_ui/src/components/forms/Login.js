@@ -7,6 +7,7 @@ import {addUser} from "../../store/slice/userSlice";
 import {Alert, Button, Container, Paper} from "@mui/material";
 import {Form, Formik} from "formik";
 import TextFieldInput from "./TextFieldInput";
+import {useTranslation} from "react-i18next";
 
 const loginValidationSchema = Yup.object().shape({
     username: Yup.string()
@@ -18,6 +19,8 @@ export default () => {
     const [error, setError] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const {t} = useTranslation();
 
     const onLogin = (loginData, helpers) => {
         login(loginData)
@@ -66,7 +69,7 @@ export default () => {
                                     type="submit"
                                     disabled={props.isSubmitting}
                                     sx={{mt:3}}>
-                                Login </Button>
+                                {t('buttons:login')} </Button>
                         </Form>
                     </Paper>
                 </Container>

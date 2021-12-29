@@ -17,6 +17,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import {NavLink} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {addToCart} from "../store/slice/cartSlice";
+import {useTranslation} from "react-i18next";
 
 
 const Books = () => {
@@ -28,6 +29,8 @@ const Books = () => {
 
     const dispatcher = useDispatch();
     const onAddBookToCart = (book) => dispatcher(addToCart(book));
+
+    const {t} = useTranslation('books');
 
     useEffect(() => {
         getBooks()
@@ -45,7 +48,7 @@ const Books = () => {
                 </Box>
                 :
                 <>
-                    <h1>All books</h1>
+                    <h1>{t('all books')}</h1>
                     <Grid container spacing={3}>
                         {books.map((book) => (
                             <Grid item xs={4}
@@ -60,15 +63,15 @@ const Books = () => {
                                                 {book.author}
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
-                                                Category: {book.category}
+                                                {t('category')}: {book.category}
                                             </Typography>
                                              {user && user.roles.includes('ADMIN') &&
                                             <Typography variant="body2" color="text.secondary">
-                                                Qty: {book.quantity}
+                                                {t('qty')}: {book.quantity}
                                             </Typography>
                                             }
                                             <Typography variant="subtitle1" sx={{fontWeight: "bold", my: 2}}>
-                                                Price: {book.price} Eur
+                                                {t('price')}: {book.price} Eur
                                             </Typography>
                                         </CardContent>
                                         <CardActions sx={{justifyContent: "space-between"}}>
@@ -77,7 +80,7 @@ const Books = () => {
                                                     size="small"
                                                     component={NavLink}
                                                     to={`/books/${book.id}`}>
-                                                More info
+                                                {t('more info')}
                                             </Button>
                                             <Button variant="outlined"
                                                     color="inherit"

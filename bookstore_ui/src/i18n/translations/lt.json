@@ -1,3 +1,24 @@
 {
-
+  "header": {
+    "add_new_book": "Ivesti nauja knyga",
+    "create_new_user": "Sukurti nauja vartotoja"
+  },
+  "books": {
+    "all books": "Visos knygos",
+    "title": "Pavadinimas",
+    "author": "Autorius",
+    "category": "Kategorija",
+    "year": "Leidimo metai",
+    "quantity": "Kiekis",
+    "qty": "Kiekis",
+    "price": "Kaina",
+    "more info": "Placiau..."
+  },
+  "buttons": {
+    "login": "Prisijungti",
+    "logout": "Atsijungti",
+    "update": "Atnaujinti",
+    "delete": "Istrinti",
+    "submit": "Patvirtinti"
+  }
 }

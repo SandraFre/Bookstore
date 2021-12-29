@@ -4,6 +4,7 @@ import {Form, Formik} from "formik";
 import {createBook} from "../../api/bookApi";
 import {Alert, Button, CircularProgress, Container, Paper} from "@mui/material";
 import TextFieldInput from "./TextFieldInput";
+import {useTranslation} from "react-i18next";
 
 const validationSchema = Yup.object().shape({
     title: Yup.string()
@@ -29,6 +30,8 @@ const validationSchema = Yup.object().shape({
 export default () => {
 
     const [notification, setNotification] = useState({isVisible: false, message: '', severity: ''});
+
+    const {t} = useTranslation();
 
     const onCreateBook = (book, helpers) => {
         createBook(book)
@@ -84,7 +87,11 @@ export default () => {
                                             label="Price:"/>
                             {
                                 props.isSubmitting ? <CircularProgress color="inherit"/> :
-                                    <Button type="submit" variant="outlined" color="inherit" sx={{mt:3}}>Submit</Button>
+                                    <Button type="submit"
+                                            variant="outlined"
+                                            color="inherit"
+                                            sx={{mt:3}}>
+                                        {t('buttons:submit')}</Button>
                             }
                         </Form>
                     </Paper>

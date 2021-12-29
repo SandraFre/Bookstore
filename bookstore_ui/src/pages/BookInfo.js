@@ -7,6 +7,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {addToCart} from "../store/slice/cartSlice";
+import {useTranslation} from "react-i18next";
 
 export default () => {
     const {bookId} = useParams();
@@ -19,6 +20,8 @@ export default () => {
 
     const dispatcher = useDispatch();
     const onAddBookToCart = (book) => dispatcher(addToCart(book));
+
+    const {t} = useTranslation();
 
     useEffect(() => {
         getBookById(bookId)
@@ -73,10 +76,10 @@ export default () => {
                                     <>
                                     <Button color="inherit"
                                             component={NavLink}
-                                            to={`/books/update/${book.id}`}>Update</Button>
+                                            to={`/books/update/${book.id}`}>{t('buttons:update')}</Button>
                                     <Button color="inherit"
                                     onClick={()=>onDeleteBook(book.id)}
-                                    >Delete</Button>
+                                    >{t('buttons:delete')}</Button>
                                     </>
                                 }
                             </Grid>

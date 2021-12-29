@@ -1,3 +1,24 @@
 {
-
+  "header": {
+    "add_new_book": "Add new book",
+    "create_new_user": "Create new user"
+  },
+  "books": {
+    "all books": "All books",
+    "title": "Title",
+    "author": "Author",
+    "category": "Category",
+    "year": "Year of publication",
+    "quantity": "Quantity",
+    "qty": "Qty",
+    "price": "Price",
+    "more info": "More info"
+  },
+  "buttons": {
+    "login": "Login",
+    "logout": "Logout",
+    "update": "Update",
+    "delete": "Delete",
+    "submit": "Submit"
+  }
 }

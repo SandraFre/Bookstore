@@ -21,6 +21,7 @@ import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher";
 import SearchBar from "../searchBar/SearchBar";
 import {useDispatch, useSelector} from "react-redux";
 import {removeUser} from "../../store/slice/userSlice";
+import {useTranslation} from "react-i18next";
 
 
 export default () => {
@@ -30,6 +31,8 @@ export default () => {
     const user = useSelector(state => state.user.user);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const {t} = useTranslation();
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -72,7 +75,7 @@ export default () => {
                                 sx={{my: 1, mx: 1.5}}
                                 component={NavLink}
                                 to="/books/create">
-                                Add new book
+                                {t('header:add_new_book')}
                             </Link>
                             <Link
                                 variant="body1"
@@ -82,7 +85,7 @@ export default () => {
                                 to="/users/registration"
                                 sx={{my: 1, mx: 1.5}}
                             >
-                                Create new user
+                                {t('header:create_new_user')}
                             </Link>
                         </>
                     }
@@ -152,7 +155,7 @@ export default () => {
                                     <ListItemIcon>
                                         <Logout fontSize="small"/>
                                     </ListItemIcon>
-                                    Logout
+                                    {t('buttons:logout')}
                                 </MenuItem>
                             </Menu>
                         </>
@@ -162,7 +165,7 @@ export default () => {
                                 sx={{my: 1, mx: 3}}
                                 to="/login"
                                 component={NavLink}>
-                            Login
+                            {t('buttons:login')}
                         </Button>
                 }
                 <LanguageSwitcher sx={{ms:5}}/>

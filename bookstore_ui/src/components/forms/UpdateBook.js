@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 import * as Yup from "yup";
 import {getBookById, updateBook} from "../../api/bookApi";
 import * as React from "react";
+import {useTranslation} from "react-i18next";
 
 const validationSchema = Yup.object().shape({
     title: Yup.string()
@@ -34,6 +35,8 @@ export default () => {
     const [loading, setLoading] = useState(true);
 
     const [notification, setNotification] = useState({isVisible: false, message: '', severity: ''});
+
+    const {t} = useTranslation();
 
     const onUpdateBook = (book, helpers) => {
         updateBook(book)
@@ -104,7 +107,7 @@ export default () => {
                                     {
                                         props.isSubmitting ? <CircularProgress color="inherit"/> :
                                             <Button type="submit" variant="outlined" color="inherit"
-                                                    sx={{mt: 3}}>Update</Button>
+                                                    sx={{mt: 3}}>{t('buttons:update')}</Button>
                                     }
 
                                 </Form>
