@@ -5,6 +5,8 @@ import {deleteBook, getBookById, getBooks, updateBook} from "../api/bookApi";
 import * as React from "react";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import {useNavigate} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {addToCart} from "../store/slice/cartSlice";
 
 export default () => {
     const {bookId} = useParams();
@@ -12,6 +14,11 @@ export default () => {
     const [loading, setLoading] = useState(true);
     const [notification, setNotification] = useState({isVisible: false, message: '', severity: ''});
     const navigate = useNavigate();
+
+    const user = useSelector(state => state.user.user);
+
+    const dispatcher = useDispatch();
+    const onAddBookToCart = (book) => dispatcher(addToCart(book));
 
     useEffect(() => {
         getBookById(bookId)
@@ -48,7 +55,7 @@ export default () => {
                     <Paper elevation={3} sx={{py: 1, px: 5, backgroundColor: '#e6ebe1'}}>
                         <h1>{book.title}</h1>
                         <h3>{book.author}</h3>
-                        <p><span sx={{fontStyle: 'italic'}}>Information</span><br/>
+                        <p><span sx={{ fontStyle: 'italic' }}>Information</span><br/>
                             category: {book.category},<br/>
                             year of publication: {book.year},<br/>
                             quantity: {book.quantity},<br/>
@@ -62,17 +69,22 @@ export default () => {
                               justifyContent="space-between"
                               alignItems="center" sx={{mt: 3, mb: 1}}>
                             <Grid item>
-                                <Button color="inherit"
-                                        component={NavLink}
-                                        to={`/books/update/${book.id}`}>Update</Button>
-                                <Button color="inherit"
-                                        onClick={()=>onDeleteBook(book.id)}
-                                >Delete</Button>
+                                {user && user.roles.includes('ADMIN') &&
+                                    <>
+                                    <Button color="inherit"
+                                            component={NavLink}
+                                            to={`/books/update/${book.id}`}>Update</Button>
+                                    <Button color="inherit"
+                                    onClick={()=>onDeleteBook(book.id)}
+                                    >Delete</Button>
+                                    </>
+                                }
                             </Grid>
                             <Grid item>
                                 <Button variant="outlined"
                                         color="inherit"
-                                        size="small">
+                                        size="small"
+                                        onClick={() => onAddBookToCart(book)}>
                                     <AddShoppingCartIcon/>
                                 </Button>
                             </Grid>

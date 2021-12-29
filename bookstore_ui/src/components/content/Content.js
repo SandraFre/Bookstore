@@ -33,9 +33,8 @@ export default () => {
                     <Route path="/users/registration" element={<RegistrationForm/>}/>
                 </Route>
 
-                <Route path="/cart" element={<SecuredRoute/>}>
                     <Route path="/cart" element={<Cart/>}/>
-                </Route>
+
 
                 <Route path="/login" element={<Login/>}/>
 

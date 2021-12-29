@@ -15,7 +15,8 @@ import {useEffect, useState} from "react";
 import {getBooks} from "../api/bookApi";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import {NavLink} from "react-router-dom";
-// import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {addToCart} from "../store/slice/cartSlice";
 
 
 const Books = () => {
@@ -23,8 +24,10 @@ const Books = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // const dispatcher = useDispatch();
-    // const onAddBookToCart = (book) => dispatcher(addToCart(book));
+    const user = useSelector(state => state.user.user);
+
+    const dispatcher = useDispatch();
+    const onAddBookToCart = (book) => dispatcher(addToCart(book));
 
     useEffect(() => {
         getBooks()
@@ -59,9 +62,11 @@ const Books = () => {
                                             <Typography variant="body2" color="text.secondary">
                                                 Category: {book.category}
                                             </Typography>
+                                             {user && user.roles.includes('ADMIN') &&
                                             <Typography variant="body2" color="text.secondary">
                                                 Qty: {book.quantity}
                                             </Typography>
+                                            }
                                             <Typography variant="subtitle1" sx={{fontWeight: "bold", my: 2}}>
                                                 Price: {book.price} Eur
                                             </Typography>
@@ -72,10 +77,12 @@ const Books = () => {
                                                     size="small"
                                                     component={NavLink}
                                                     to={`/books/${book.id}`}>
-                                                More info</Button>
+                                                More info
+                                            </Button>
                                             <Button variant="outlined"
                                                     color="inherit"
-                                                    size="small">
+                                                    size="small"
+                                                    onClick={() => onAddBookToCart(book)}>
                                                 <AddShoppingCartIcon/>
                                             </Button>
                                         </CardActions>

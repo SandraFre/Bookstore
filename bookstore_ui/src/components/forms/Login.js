@@ -43,7 +43,7 @@ export default () => {
             validationSchema={loginValidationSchema}>
 
             {props => (
-                <Container maxWidth="sm">
+                <Container maxWidth="sm" sx={{my: 5}}>
                     <Paper elevation={3} sx={{py: 1, backgroundColor: '#e6ebe1'}}>
                         {
                             error &&
@@ -51,7 +51,7 @@ export default () => {
                                 Bad credentials
                             </Alert>
                         }
-                        <Form>
+                        <Form style={{margin: 50}}>
                             <TextFieldInput
                                 error={props.touched.username && !!props.errors.username}
                                 fieldName="username"
@@ -62,8 +62,10 @@ export default () => {
                                 label="Password"
                                 type="password"/>
                             <Button variant="outlined"
+                                    color="inherit"
                                     type="submit"
-                                    disabled={props.isSubmitting}>
+                                    disabled={props.isSubmitting}
+                                    sx={{mt:3}}>
                                 Login </Button>
                         </Form>
                     </Paper>

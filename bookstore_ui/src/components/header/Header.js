@@ -86,7 +86,6 @@ export default () => {
                             </Link>
                         </>
                     }
-                    {user &&
                         <Link
                             variant="button"
                             color="text.primary"
@@ -98,7 +97,6 @@ export default () => {
                                 <ShoppingCartIcon/>
                             </Badge>
                         </Link>
-                    }
                 </nav>
 
                 {
@@ -108,7 +106,7 @@ export default () => {
                                 <IconButton
                                     onClick={handleClick}
                                     size="small"
-                                    sx={{ml: 2}}>
+                                    sx={{mx: 3}}>
                                     <Avatar sx={{width: 32, height: 32}}/>
                                 </IconButton>
                             </Tooltip>
@@ -161,13 +159,13 @@ export default () => {
                         :
                         <Button variant="outlined"
                                 color="inherit"
-                                sx={{my: 1, mx: 1.5}}
+                                sx={{my: 1, mx: 3}}
                                 to="/login"
                                 component={NavLink}>
                             Login
                         </Button>
                 }
-                <LanguageSwitcher/>
+                <LanguageSwitcher sx={{ms:5}}/>
             </Toolbar>
         </AppBar>
     )
