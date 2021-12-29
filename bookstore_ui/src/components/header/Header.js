@@ -63,7 +63,7 @@ export default () => {
                 </Typography>
                 <SearchBar/>
                 <nav>
-                    {user.roles.includes('ADMIN') &&
+                    {user && user.roles.includes('ADMIN') &&
                         <>
                             <Link
                                 variant="body1"
