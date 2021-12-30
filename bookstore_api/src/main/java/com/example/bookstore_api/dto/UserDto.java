@@ -16,6 +16,9 @@ public class UserDto {
     public UserDto(User user) {
         username = user.getUsername();
         fullName = user.getFullName();
-        roles = user.getRoles().stream().map(Role::getName).collect(Collectors.toSet());
+        roles = user.getRoles()
+                .stream()
+                .map(Role::getName)
+                .collect(Collectors.toSet());
     }
 }

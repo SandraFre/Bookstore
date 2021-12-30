@@ -35,5 +35,4 @@ public class Book {
     @NotNull
     private BigDecimal price;
 
-
 }

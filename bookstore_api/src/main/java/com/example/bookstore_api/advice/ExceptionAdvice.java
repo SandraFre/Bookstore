@@ -13,13 +13,13 @@ public class ExceptionAdvice {
 
     @ExceptionHandler(BookNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ExceptionResponse handlingBookNotFound(BookNotFoundException exception){
+    public ExceptionResponse handlingBookNotFound(BookNotFoundException exception) {
         return new ExceptionResponse(exception.getMessage(), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(EmptyResultDataAccessException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ExceptionResponse handlingEmptyResult(EmptyResultDataAccessException exception){
+    public ExceptionResponse handlingEmptyResult(EmptyResultDataAccessException exception) {
         return new ExceptionResponse(exception.getMessage(), HttpStatus.NOT_FOUND);
     }
 

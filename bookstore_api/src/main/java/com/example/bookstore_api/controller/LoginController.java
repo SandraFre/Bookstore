@@ -15,7 +15,6 @@ public class LoginController {
 
     @PostMapping
     public UserDto login(@AuthenticationPrincipal User user) {
-
         return new UserDto(user);
     }
 }
