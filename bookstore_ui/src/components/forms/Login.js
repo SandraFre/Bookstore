@@ -57,11 +57,11 @@ export default () => {
                             <TextFieldInput
                                 error={props.touched.username && !!props.errors.username}
                                 fieldName="username"
-                                label="Username"/>
+                                label={t('user:username')}/>
                             <TextFieldInput
                                 error={props.touched.password && !!props.errors.password}
                                 fieldName="password"
-                                label="Password"
+                                label={t('user:password')}
                                 type="password"/>
                             <Button variant="outlined"
                                     color="inherit"

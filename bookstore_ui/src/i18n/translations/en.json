@@ -29,5 +29,14 @@
   "login": {
     "register_here": "New user? Please register here",
     "login_here": "Already have an account? Please login here"
+  },
+  "user": {
+    "username": "Username",
+    "name": "Name",
+    "surname":"Surname",
+    "email": "Email",
+    "password": "Password",
+    "repeat_password": "Repeat password",
+    "type_here": "Type here..."
   }
 }

@@ -18,7 +18,6 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import {NavLink, useNavigate} from "react-router-dom";
 import {Logout} from "@mui/icons-material";
 import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher";
-import SearchBar from "../searchBar/SearchBar";
 import {useDispatch, useSelector} from "react-redux";
 import {removeUser} from "../../store/slice/userSlice";
 import {useTranslation} from "react-i18next";
@@ -64,7 +63,6 @@ export default () => {
                         Bookstore
                     </Link>
                 </Typography>
-                {/*<SearchBar/>*/}
                 <nav>
                     {user && user.roles.includes('ADMIN') &&
                         <>
@@ -82,7 +80,7 @@ export default () => {
                                 color="text.primary"
                                 underline="none"
                                 component={NavLink}
-                                to="/users/registration"
+                                to="/register"
                                 sx={{my: 1, mx: 1.5}}
                             >
                                 {t('header:create_new_user')}

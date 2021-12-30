@@ -1,6 +1,6 @@
 {
   "header": {
-    "add_new_book": "Įvesti naują knyga",
+    "add_new_book": "Įvesti naują knygą",
     "create_new_user": "Sukurti naują vartotoją"
   },
   "books": {
@@ -29,5 +29,14 @@
   "login": {
     "register_here": "Naujas vartotojas? Registruokis čia",
     "login_here": "Registruotas vartotojas? Prisijunk čia"
+  },
+  "user": {
+    "username": "Vartotojo vardas",
+    "name": "Vardas",
+    "surname":"Pavardė",
+    "email": "El.paštas",
+    "password": "Slaptažodis",
+    "repeat_password": "Pakartoti slaptažodį",
+    "type_here": "Įrašykite čia..."
   }
 }

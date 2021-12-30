@@ -57,11 +57,10 @@ export default () => {
                     <Paper elevation={3} sx={{py: 1, px: 5, backgroundColor: '#F9EFE5'}}>
                         <h1>{book.title}</h1>
                         <h3>{book.author}</h3>
-                        <p><span sx={{fontStyle: 'italic'}}>Information</span><br/>
-                            category: {book.category},<br/>
-                            year of publication: {book.year},<br/>
-                            quantity: {book.quantity},<br/>
-                            price: {book.price} Eur<br/>
+                        <p>{t('books:category')}: {book.category},<br/>
+                            {t('books:year')}: {book.year},<br/>
+                            {t('books:quantity')}: {book.quantity},<br/>
+                            {t('books:price')}: {book.price} Eur<br/>
                         </p>
 
                         <Divider variant="middle"/>
