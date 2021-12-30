@@ -12,8 +12,8 @@ i18n
             en,
             lt
         },
-        load:"languageOnly",
-        ns:[],
+        load: "languageOnly",
+        ns: [],
         whitelist: ['en', 'lt'],
         fallbackLng: "en",
         interpolation: {

@@ -1,7 +1,7 @@
 import {Alert, Box, Button, CircularProgress, Container, Divider, Grid, Paper} from "@mui/material";
 import {NavLink, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {deleteBook, getBookById, getBooks, updateBook} from "../api/bookApi";
+import {deleteBook, getBookById} from "../api/bookApi";
 import * as React from "react";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import {useNavigate} from "react-router-dom";
@@ -38,7 +38,6 @@ export default () => {
                 }
             })
             .catch((error) => setNotification({isVisible: true, message: 'Something is wrong', severity: 'error'}))
-
     }
 
     return (
@@ -58,7 +57,7 @@ export default () => {
                     <Paper elevation={3} sx={{py: 1, px: 5, backgroundColor: '#F9EFE5'}}>
                         <h1>{book.title}</h1>
                         <h3>{book.author}</h3>
-                        <p><span sx={{ fontStyle: 'italic' }}>Information</span><br/>
+                        <p><span sx={{fontStyle: 'italic'}}>Information</span><br/>
                             category: {book.category},<br/>
                             year of publication: {book.year},<br/>
                             quantity: {book.quantity},<br/>
@@ -74,12 +73,12 @@ export default () => {
                             <Grid item>
                                 {user && user.roles.includes('ADMIN') &&
                                     <>
-                                    <Button color="inherit"
-                                            component={NavLink}
-                                            to={`/books/update/${book.id}`}>{t('buttons:update')}</Button>
-                                    <Button color="inherit"
-                                    onClick={()=>onDeleteBook(book.id)}
-                                    >{t('buttons:delete')}</Button>
+                                        <Button color="inherit"
+                                                component={NavLink}
+                                                to={`/books/update/${book.id}`}>{t('buttons:update')}</Button>
+                                        <Button color="inherit"
+                                                onClick={() => onDeleteBook(book.id)}
+                                        >{t('buttons:delete')}</Button>
                                     </>
                                 }
                             </Grid>
@@ -93,7 +92,6 @@ export default () => {
                             </Grid>
 
                         </Grid>
-
                     </Paper>
                 </Container>
             }

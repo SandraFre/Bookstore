@@ -8,11 +8,11 @@ const initialState = {
 const userSlice = createSlice({
     name: 'user',
     initialState,
-    reducers:{
-        addUser(user, {payload}){
+    reducers: {
+        addUser(user, {payload}) {
             return payload;
         },
-        removeUser(){
+        removeUser() {
             return initialState;
         }
     }

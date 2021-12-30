@@ -35,7 +35,6 @@ export default () => {
             .finally(() => helpers.setSubmitting(false));
     }
 
-
     return (
         <Formik
             initialValues={{
@@ -68,7 +67,7 @@ export default () => {
                                     color="inherit"
                                     type="submit"
                                     disabled={props.isSubmitting}
-                                    sx={{mt:3}}>
+                                    sx={{mt: 3}}>
                                 {t('buttons:login')} </Button>
                         </Form>
                     </Paper>

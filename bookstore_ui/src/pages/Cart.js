@@ -33,15 +33,15 @@ export default () => {
             {books.length === 0 ?
                 <Alert severity="info">Cart is empty! </Alert>
                 :
-                <TableContainer component={Paper} sx={{backgroundColor: '#F9EFE5', p:3}}>
+                <TableContainer component={Paper} sx={{backgroundColor: '#F9EFE5', p: 3}}>
                     <Table sx={{minWidth: 100}} aria-label="simple table">
                         <TableHead>
                             <TableRow>
-                                <TableCell sx={{fontWeight:'bold'}}>{t('books:title')}</TableCell>
-                                <TableCell sx={{fontWeight:'bold'}}>{t('books:author')}</TableCell>
-                                <TableCell sx={{fontWeight:'bold'}}align="center">{t('books:quantity')}</TableCell>
-                                <TableCell sx={{fontWeight:'bold'}} align="right">{t('books:price')}</TableCell>
-                                <TableCell sx={{fontWeight:'bold'}} align="right">{t('cart:subtotal')}</TableCell>
+                                <TableCell sx={{fontWeight: 'bold'}}>{t('books:title')}</TableCell>
+                                <TableCell sx={{fontWeight: 'bold'}}>{t('books:author')}</TableCell>
+                                <TableCell sx={{fontWeight: 'bold'}} align="center">{t('books:quantity')}</TableCell>
+                                <TableCell sx={{fontWeight: 'bold'}} align="right">{t('books:price')}</TableCell>
+                                <TableCell sx={{fontWeight: 'bold'}} align="right">{t('cart:subtotal')}</TableCell>
                                 <TableCell></TableCell>
                             </TableRow>
                         </TableHead>
@@ -52,12 +52,12 @@ export default () => {
                                     <TableCell component="th" scope="row">{book.title}</TableCell>
                                     <TableCell>{book.author}</TableCell>
                                     <TableCell align="center">
-                                        <Button variant="outlined" color="inherit" size="small" sx={{mx:2}}
-                                        onClick={()=>onRemoveOneItemFromCart(book)}
-                                                disabled={book.count===0}
+                                        <Button variant="outlined" color="inherit" size="small" sx={{mx: 2}}
+                                                onClick={() => onRemoveOneItemFromCart(book)}
+                                                disabled={book.count === 0}
                                         >-</Button>
                                         {book.count}
-                                        <Button variant="outlined" color="inherit" size="small" sx={{mx:2}}
+                                        <Button variant="outlined" color="inherit" size="small" sx={{mx: 2}}
                                                 onClick={() => onAddBookToCart(book)}
                                         >+</Button>
                                     </TableCell>
@@ -71,13 +71,12 @@ export default () => {
                                     </TableCell>
                                 </TableRow>
                             ))}
-
                             <TableRow>
                                 <TableCell></TableCell>
                                 <TableCell></TableCell>
                                 <TableCell></TableCell>
-                                <TableCell align="right" sx={{fontWeight:"bold"}}>{t('cart:total')}</TableCell>
-                                <TableCell align="right" sx={{fontWeight:"bold"}}>{totalSum}</TableCell>
+                                <TableCell align="right" sx={{fontWeight: "bold"}}>{t('cart:total')}</TableCell>
+                                <TableCell align="right" sx={{fontWeight: "bold"}}>{totalSum}</TableCell>
                                 <TableCell></TableCell>
                             </TableRow>
                             {
@@ -89,16 +88,15 @@ export default () => {
                                     <TableCell></TableCell>
                                     <TableCell></TableCell>
                                     <TableCell>
-                                    <Button variant="outlined"
-                                            color="inherit"
-                                            size="small"
-                                    sx={{my:2}}>
-                                        {t('buttons:checkout')}
-                                    </Button>
+                                        <Button variant="outlined"
+                                                color="inherit"
+                                                size="small"
+                                                sx={{my: 2}}>
+                                            {t('buttons:checkout')}
+                                        </Button>
                                     </TableCell>
                                 </TableRow>
                             }
-
                         </TableBody>
                     </Table>
                 </TableContainer>

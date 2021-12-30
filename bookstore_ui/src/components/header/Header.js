@@ -89,17 +89,17 @@ export default () => {
                             </Link>
                         </>
                     }
-                        <Link
-                            variant="button"
-                            color="text.primary"
-                            to="/cart"
-                            sx={{my: 1, mx: 1.5}}
-                            component={NavLink}
-                        >
-                            <Badge badgeContent={totalItems} color="secondary">
-                                <ShoppingCartIcon/>
-                            </Badge>
-                        </Link>
+                    <Link
+                        variant="button"
+                        color="text.primary"
+                        to="/cart"
+                        sx={{my: 1, mx: 1.5}}
+                        component={NavLink}
+                    >
+                        <Badge badgeContent={totalItems} color="secondary">
+                            <ShoppingCartIcon/>
+                        </Badge>
+                    </Link>
                 </nav>
 
                 {
@@ -168,7 +168,7 @@ export default () => {
                             {t('buttons:login')}
                         </Button>
                 }
-                <LanguageSwitcher sx={{ms:5}}/>
+                <LanguageSwitcher sx={{ms: 5}}/>
             </Toolbar>
         </AppBar>
     )

@@ -1,7 +1,7 @@
 import {ErrorMessage, Field} from "formik";
 import {FormControl, FormHelperText, TextField} from "@mui/material";
 
-export default ({fieldName, error, label, placeholder='Type here...', ...props})=>(
+export default ({fieldName, error, label, placeholder = 'Type here...', ...props}) => (
     <FormControl error={error}
                  variant="outlined"
                  fullWidth

@@ -24,7 +24,6 @@ export default () => {
     const {t} = useTranslation();
 
     return (
-
         <Formik initialValues={{
             name: '',
             surname: '',
@@ -69,7 +68,7 @@ export default () => {
                                     <Button type="submit"
                                             color="inherit"
                                             variant="outlined"
-                                            sx={{mt:3}}>
+                                            sx={{mt: 3}}>
                                         {t('buttons:submit')}</Button>
                             }
                         </Form>

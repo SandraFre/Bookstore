@@ -90,7 +90,7 @@ export default () => {
                                     <Button type="submit"
                                             variant="outlined"
                                             color="inherit"
-                                            sx={{mt:3}}>
+                                            sx={{mt: 3}}>
                                         {t('buttons:submit')}</Button>
                             }
                         </Form>

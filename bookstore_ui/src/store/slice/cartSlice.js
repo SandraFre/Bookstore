@@ -29,17 +29,17 @@ const cartSlice = createSlice({
 });
 
 let prevCart = [];
-const subscribeToStore = (store) =>{
-    store.subscribe(()=>{
+const subscribeToStore = (store) => {
+    store.subscribe(() => {
         const cart = store.getState().cart;
-        if (prevCart !== cart){
+        if (prevCart !== cart) {
             addLocalStorage('cart', cart);
             prevCart = cart;
         }
     })
 }
 
-const loadCartFromLocalStorage=()=>getLocalStorage('cart') || [];
+const loadCartFromLocalStorage = () => getLocalStorage('cart') || [];
 
 export default cartSlice.reducer;
 export const {addToCart, removeOneFromCart, removeFromCart} = cartSlice.actions;

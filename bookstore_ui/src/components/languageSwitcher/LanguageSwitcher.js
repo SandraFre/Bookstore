@@ -2,7 +2,6 @@ import {MenuItem, Select} from "@mui/material";
 import {useTranslation} from "react-i18next";
 
 export default () => {
-
     const {i18n} = useTranslation();
 
     const onChangeLanguage=(e)=>{
@@ -15,8 +14,7 @@ export default () => {
             labelId="language-select-label"
             id="language-select"
             value={i18n.language}
-            onChange={onChangeLanguage}
-        >
+            onChange={onChangeLanguage}>
             <MenuItem value="en" selected={i18n.language==='en'}>EN</MenuItem>
             <MenuItem value="lt" selected={i18n.language==='lt'}>LT</MenuItem>
         </Select>

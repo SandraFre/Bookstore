@@ -57,7 +57,7 @@ const Books = () => {
                     <h1>{t('all books')}</h1>
                     <Grid container spacing={3}>
                         {books.map((book) => (
-                            <Grid item xs={4}
+                            <Grid item xs={7} md={4}
                                   key={book.id}>
                                 <Paper elevation={3}>
                                     <Card sx={{backgroundColor: '#F9EFE5'}}>

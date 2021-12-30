@@ -109,7 +109,6 @@ export default () => {
                                             <Button type="submit" variant="outlined" color="inherit"
                                                     sx={{mt: 3}}>{t('buttons:update')}</Button>
                                     }
-
                                 </Form>
                             </Paper>
                         </Container>
