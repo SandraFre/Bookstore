@@ -1,4 +1,6 @@
 import * as React from "react";
+import cover from "../img/bookstore.jpg";
+import "../css/style.css";
 import {
     Box,
     Button,
@@ -9,7 +11,7 @@ import {
     Container,
     Grid,
     Paper,
-    Typography
+    Typography,
 } from "@mui/material";
 import {useEffect, useState} from "react";
 import {getBooks} from "../api/bookApi";
@@ -41,6 +43,10 @@ const Books = () => {
 
 
     return (
+        <>
+            <Container sx={{my: 5, display: 'flex', justifyContent: 'center'}}>
+                <img src={cover} className="cover-img"/>
+            </Container>
         <Container maxWidth="md" sx={{my: 5}}>
             {loading ?
                 <Box sx={{display: 'flex', justifyContent: 'center'}}>
@@ -97,6 +103,7 @@ const Books = () => {
                 </>
             }
         </Container>
+        </>
     )
 }
 
