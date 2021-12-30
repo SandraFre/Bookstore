@@ -5,7 +5,7 @@ import TextFieldInput from "./TextFieldInput";
 import {useTranslation} from "react-i18next";
 import {NavLink} from "react-router-dom";
 import {useState} from "react";
-import {createBook, createUser} from "../../api/bookApi";
+import {createUser} from "../../api/bookApi";
 
 const validationSchema = Yup.object().shape({
     username: Yup.string()
