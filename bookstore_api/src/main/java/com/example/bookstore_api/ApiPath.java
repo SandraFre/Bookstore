@@ -15,5 +15,6 @@ public interface ApiPath {
     String GET_BLOB = BLOBS + "/{" + ID_VARIABLE + "}";
 
     String LOGIN = "/login";
+    String REGISTER = "/register";
 
 }
