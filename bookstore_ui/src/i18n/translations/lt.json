@@ -19,6 +19,11 @@
     "logout": "Atsijungti",
     "update": "Atnaujinti",
     "delete": "Istrinti",
-    "submit": "Patvirtinti"
+    "submit": "Patvirtinti",
+    "checkout": "Pirkti"
+  },
+  "cart": {
+    "subtotal": "Suma",
+    "total": "Iš viso"
   }
 }

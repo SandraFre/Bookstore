@@ -15,6 +15,13 @@ const cartSlice = createSlice({
                 state.push(book);
             }
         },
+        removeOneFromCart(state, action) {
+            const book = action.payload;
+            const existingBook = state.find(b => b.id === book.id);
+            if (existingBook) {
+                existingBook.count--;
+            }
+        },
         removeFromCart(state, {payload: id}) {
             return state.filter(b => b.id !== id);
         }
@@ -35,5 +42,5 @@ const subscribeToStore = (store) =>{
 const loadCartFromLocalStorage=()=>getLocalStorage('cart') || [];
 
 export default cartSlice.reducer;
-export const {addToCart, removeFromCart} = cartSlice.actions;
+export const {addToCart, removeOneFromCart, removeFromCart} = cartSlice.actions;
 export {subscribeToStore, loadCartFromLocalStorage}

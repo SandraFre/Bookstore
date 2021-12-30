@@ -19,6 +19,11 @@
     "logout": "Logout",
     "update": "Update",
     "delete": "Delete",
-    "submit": "Submit"
+    "submit": "Submit",
+    "checkout": "Checkout"
+  },
+  "cart": {
+    "subtotal": "Subtotal",
+    "total": "Total"
   }
 }
