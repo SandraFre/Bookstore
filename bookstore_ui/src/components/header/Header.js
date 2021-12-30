@@ -96,7 +96,7 @@ export default () => {
                             sx={{my: 1, mx: 1.5}}
                             component={NavLink}
                         >
-                            <Badge badgeContent={totalItems} color="primary">
+                            <Badge badgeContent={totalItems} color="secondary">
                                 <ShoppingCartIcon/>
                             </Badge>
                         </Link>
