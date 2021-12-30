@@ -1,10 +1,10 @@
 import * as Yup from "yup";
-import {useNavigate} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {login} from "../../api/userApi";
 import {addUser} from "../../store/slice/userSlice";
-import {Alert, Button, Container, Paper} from "@mui/material";
+import {Alert, Button, Container, Paper, Typography} from "@mui/material";
 import {Form, Formik} from "formik";
 import TextFieldInput from "./TextFieldInput";
 import {useTranslation} from "react-i18next";
@@ -69,6 +69,10 @@ export default () => {
                                     disabled={props.isSubmitting}
                                     sx={{mt: 3}}>
                                 {t('buttons:login')} </Button>
+                            <p><Typography variant="subtitle2"
+                                           component={NavLink}
+                                           to="/register"
+                            >{t('login:register_here')}</Typography></p>
                         </Form>
                     </Paper>
                 </Container>

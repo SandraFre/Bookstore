@@ -1,7 +1,7 @@
 {
   "header": {
-    "add_new_book": "Ivesti nauja knyga",
-    "create_new_user": "Sukurti nauja vartotoja"
+    "add_new_book": "Įvesti naują knyga",
+    "create_new_user": "Sukurti naują vartotoją"
   },
   "books": {
     "all books": "Visos knygos",
@@ -12,18 +12,22 @@
     "quantity": "Kiekis",
     "qty": "Kiekis",
     "price": "Kaina",
-    "more info": "Placiau..."
+    "more info": "Plačiau..."
   },
   "buttons": {
     "login": "Prisijungti",
     "logout": "Atsijungti",
     "update": "Atnaujinti",
-    "delete": "Istrinti",
+    "delete": "Ištrinti",
     "submit": "Patvirtinti",
     "checkout": "Pirkti"
   },
   "cart": {
     "subtotal": "Suma",
     "total": "Iš viso"
+  },
+  "login": {
+    "register_here": "Naujas vartotojas? Registruokis čia",
+    "login_here": "Registruotas vartotojas? Prisijunk čia"
   }
 }

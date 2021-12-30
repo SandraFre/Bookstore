@@ -29,9 +29,7 @@ export default () => {
                     <Route path="/books/update/:bookId" element={<UpdateBook/>}/>
                 </Route>
 
-                <Route path="/users/registration" element={<SecuredRoute roles={['ADMIN']}/>}>
-                    <Route path="/users/registration" element={<RegistrationForm/>}/>
-                </Route>
+                <Route path="/register" element={<RegistrationForm/>}/>
 
                 <Route path="/cart" element={<Cart/>}/>
 

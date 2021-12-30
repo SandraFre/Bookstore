@@ -25,5 +25,9 @@
   "cart": {
     "subtotal": "Subtotal",
     "total": "Total"
+  },
+  "login": {
+    "register_here": "New user? Please register here",
+    "login_here": "Already have an account? Please login here"
   }
 }

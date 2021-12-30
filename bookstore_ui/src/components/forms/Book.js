@@ -29,9 +29,9 @@ const validationSchema = Yup.object().shape({
 
 export default () => {
 
-    const [notification, setNotification] = useState({isVisible: false, message: '', severity: ''});
-
     const {t} = useTranslation();
+
+    const [notification, setNotification] = useState({isVisible: false, message: '', severity: ''});
 
     const onCreateBook = (book, helpers) => {
         createBook(book)

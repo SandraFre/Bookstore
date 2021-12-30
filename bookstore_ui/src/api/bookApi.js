@@ -6,4 +6,6 @@ const getBookById = (id) => HTTP.get(`/books/${id}`);
 const updateBook = (data) => HTTP.put('/books', data);
 const deleteBook = (id) => HTTP.delete(`/books/${id}`);
 
-export {getBooks, createBook, getBookById, updateBook, deleteBook}
+const createUser = (data) => HTTP.post('/register', data);
+
+export {getBooks, createBook, getBookById, updateBook, deleteBook, createUser}

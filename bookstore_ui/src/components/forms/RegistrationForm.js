@@ -1,10 +1,15 @@
 import * as Yup from 'yup';
 import {Formik, Form} from "formik";
-import {Button, CircularProgress, Container, Paper} from "@mui/material";
+import {Alert, Button, CircularProgress, Container, Paper, Typography} from "@mui/material";
 import TextFieldInput from "./TextFieldInput";
 import {useTranslation} from "react-i18next";
+import {NavLink} from "react-router-dom";
+import {useState} from "react";
+import {createBook, createUser} from "../../api/bookApi";
 
 const validationSchema = Yup.object().shape({
+    username: Yup.string()
+        .required(),
     name: Yup.string()
         .required(),
     surname: Yup.string()
@@ -23,23 +28,46 @@ export default () => {
 
     const {t} = useTranslation();
 
+    const [notification, setNotification] = useState({isVisible: false, message: '', severity: ''});
+
+    const onRegisterUser = (user, helpers) => {
+        createUser(user)
+            .then(({status}) => {
+                if (status === 200) {
+                    setNotification({isVisible: true, message: 'User created successfully', severity: 'success'});
+                    helpers.resetForm();
+                }
+            })
+            .catch((error) => setNotification({isVisible: true, message: 'Something is wrong', severity: 'error'}))
+            .finally(() => helpers.setSubmitting(false));
+    }
+
     return (
         <Formik initialValues={{
+            username: '',
             name: '',
             surname: '',
             email: '',
             password: '',
             repeatPassword: ''
         }}
-                onSubmit={(values, helpers) => {
-                    helpers.setSubmitting(true);
-                }}
+                onSubmit={onRegisterUser}
                 validationSchema={validationSchema}>
 
             {props => (
-                <Container maxWidth="sm">
+                <Container maxWidth="sm" sx={{my:5}}>
                     <Paper elevation={3} sx={{py: 1, backgroundColor: '#F9EFE5'}}>
+                        {
+                            notification.isVisible &&
+                            <Alert severity={notification.severity} sx={{width: '100%'}}>
+                                {notification.message}
+                            </Alert>
+                        }
                         <Form style={{margin: 50}}>
+                            <TextFieldInput error={props.touched.username && !!props.errors.username}
+                                            fieldName="username"
+                                            label="Username:"
+                                            placeholder="Type username here..."/>
                             <TextFieldInput error={props.touched.name && !!props.errors.name}
                                             fieldName="name"
                                             label="Name:"
@@ -71,6 +99,10 @@ export default () => {
                                             sx={{mt: 3}}>
                                         {t('buttons:submit')}</Button>
                             }
+                            <p><Typography variant="subtitle2"
+                                           component={NavLink}
+                                           to="/login"
+                            >{t('login:login_here')}</Typography></p>
                         </Form>
                     </Paper>
                 </Container>

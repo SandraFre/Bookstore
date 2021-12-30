@@ -64,7 +64,7 @@ export default () => {
                         Bookstore
                     </Link>
                 </Typography>
-                <SearchBar/>
+                {/*<SearchBar/>*/}
                 <nav>
                     {user && user.roles.includes('ADMIN') &&
                         <>
