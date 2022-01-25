@@ -20,3 +20,7 @@ https://github.com/SandraFre/Bookstore
 **To start**
 * Run **BookstoreApiApplication** on API side
 * Run **npm start** on UI side
+
+**Users:**
+* admin (psw: admin)
+* user (psw: user)
