@@ -19,7 +19,7 @@ https://github.com/SandraFre/Bookstore
 
 **To start**
 * Run **BookstoreApiApplication** on API side
-* Run **npm instal** (only if running for the first time) and **npm start** on UI side.
+* Run **npm install** (only if running for the first time) and **npm start** on UI side.
 
 **Users:**
 * admin (psw: admin)
